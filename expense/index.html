@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expenzo | Welcome to the most customizable Expense Tracker</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <section class="expense">
+      <header id="header">
+        <a id="logo" href="/home/">Exprezo</a>
+        <nav>{Group_name}</nav>
+      </header>
+      <form class="expense-form">
+        <label for="name">Expediture Name</label>
+        <input type="text" name="name" id="name" placeholder="name" required />
+        <br />
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="description"></textarea>
+        <br />
+        <label for="amount">Amount</label>
+        <input type="text" name="amount" id="amount" placeholder="amount" required />
+        <br />
+        <label for="members">Members</label>
+        <br />
+
+        <input type="radio" name="members" id="members" value="1" checked />
+        <label for="members">1</label>
+        <br />
+
+        <input type="radio" name="members" id="members" value="2" />
+        <label for="members">2</label>
+        <br />
+
+        <input type="radio" name="members" id="members" value="3" />
+        <label for="members">3</label>
+        <br />
+
+        <input type="radio" name="members" id="members" value="4" />
+        <label for="members">4</label>
+        <br />
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
