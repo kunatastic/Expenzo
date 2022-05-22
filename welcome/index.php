@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("../connection.php");
+
+if (!isset($_SESSION['grp_name'])) {
+  header("Location: ../login");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
