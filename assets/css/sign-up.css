@@ -15,7 +15,20 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.form input {
+.form_modi{
+    position: relative;
+      z-index: 1;
+      background: #51556179;
+      margin: 0 auto;
+      padding: 45px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form option,
+.form select {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -137,4 +150,14 @@ nav ul li a {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
+}
+
+.radio_box {
+  text-align: left;
+  background-color: orange;
+}
+.form input[type="checkbox"]{
+  text-align: left;
+  margin-left: -50%;
+  margin-top: 10px
 }

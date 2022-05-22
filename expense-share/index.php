@@ -100,7 +100,7 @@ if (!isset($_SESSION['grp_name'])) {
         //  print_r($arr);
         //print_r($total_spent);
         //print_r($total_exp);
-        echo ('<table border="1" align="center" cellpadding="10" cellspacing="5">
+        echo ('<table class="form" border="1" align="center" cellpadding="10" cellspacing="5">
         <tr><th>Sr.No.</th>
         <th>Members</th>
         <th>Total_Expense</th>

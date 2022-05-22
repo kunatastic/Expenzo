@@ -69,28 +69,32 @@ if (!isset($_SESSION['grp_name'])) {
         $arr = explode(",", $mem);
         //print_r($arr);
         ?>
-        <form method="POST">
+        <form method="POST" class="form">
           <label>View Expense for :</label>
-
           <?php
           echo ("<select name='name' id='name'  required >");
-          echo ("<option value=''>---Choose the member---</option>");
+          echo ("<option value=''>Choose the member</option>");
           for ($i = 0; $i < $num; $i++) {
             echo ("<option value='" . $arr[$i] . "'>" . $arr[$i] . "</option>");
           }
-          echo ("<option value='all'>---Overall Expense---</option>");
+          echo ("<option value='all'>Overall Expense</option>");
           echo ("</select>");
           ?>
-          <input type="submit" name="submit" />
+          <button type="submit" name="submit">Submit</button>
         </form>
+        <br>
+        <br>
+        <br>
+
         <?php
         if (isset($_POST['submit'])) {
+          echo ("<div class=\"form_modi\">");
           $user = $_SESSION['grp_name'];
           $name = $_POST['name'];
           if ($name == "all") {
             $query = "Select * from expense where grp_name='$user';";
             $idata = mysqli_query($conn, $query);
-            echo ("Total Expense of entire trip <br>");
+            echo ("<strong>Total Expense of entire trip</strong> <br> <br>");
             echo ('<table border="1" align="center" cellpadding="10" cellspacing="5">
             <tr><th>Sr.No.</th>
             <th>Expense Description</th>
@@ -109,7 +113,7 @@ if (!isset($_SESSION['grp_name'])) {
           } else {
             $query = "Select * from transaction where grp_name='$user' and name='$name';";
             $idata = mysqli_query($conn, $query);
-            echo ("Total Expense of " . $name . "<br>");
+            echo ("Total Expense of " . $name . "<br><br>");
             echo ('<table border="1" align="center" cellpadding="10" cellspacing="5">
             <tr><th>Sr.No.</th>
             <th>Expense Description</th>
@@ -122,7 +126,7 @@ if (!isset($_SESSION['grp_name'])) {
               echo "<tr><td>" . $ct . "</td><td>" . $iresult['exp_desc'] . "</td><td>" . $iresult['amt_share'] . "</td></tr>";
             }
             echo "<tr><td style='text-align:center' colspan='2'>" . "<b>Total</b></td><td><b>" . $sum . "</b></td></tr>";
-            echo ("</table>");
+            echo ("</table></div>");
           }
         }
 

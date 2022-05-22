@@ -15,7 +15,8 @@ include("../connection.php");
   <title>Expenzo | Sign Up Page</title>
 
   <!-- Font awesome -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
@@ -48,7 +49,9 @@ include("../connection.php");
   <!-- Main header -->
   <header>
     <!-- First replaceble image -->
-    <img class="img-absolute" src="https://raw.githubusercontent.com/Jesus-E-Rodriguez/cityscapes-landing-page/master/img/city.png" alt="City 1" />
+    <img class="img-absolute"
+      src="https://raw.githubusercontent.com/Jesus-E-Rodriguez/cityscapes-landing-page/master/img/city.png"
+      alt="City 1" />
     <div class="wrapper astonish animated fadeInDown">
       <div class="rpage">
 
@@ -57,7 +60,7 @@ include("../connection.php");
             <input type="text" name="grp_name" placeholder="group name" />
             <input type="text" name="desc" placeholder="description" />
             <input type="text" name="num" placeholder="number of members" />
-            <input type="text" name="mem" placeholder="names of members" />
+            <input type="text" name="mem" placeholder="member names seperated by comma" />
             <input type="password" name="password" placeholder="password" />
             <button name="submit">Register</button>
             <p class="message">Already registered? <a href="../login/">Sign In</a></p>

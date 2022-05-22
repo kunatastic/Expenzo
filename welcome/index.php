@@ -80,22 +80,22 @@ if (!isset($_SESSION['grp_name'])) {
           <a href="../add-expense/">
             <div class="card">
               <div class="content__header">Add new expense</div>
-              <div class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat nulla quisquam
-                voluptate. Eius repellendus nam nesciunt expedita laudantium voluptatum quam?</div>
+              <div class="content">Add the expenses here as you go, indicate the members sharing the expense and get the
+                splitup at the end</div>
             </div>
           </a>
           <a href="../view-expense/">
             <div class="card">
               <div class="content__header">View all expense</div>
-              <div class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat nulla quisquam
-                voluptate. Eius repellendus nam nesciunt expedita laudantium voluptatum quam?</div>
+              <div class="content">View the expenses done through out the trip and see your individual expense too.
+              </div>
             </div>
           </a>
           <a href="../expense-share/">
             <div class="card">
               <div class="content__header">View expense share</div>
-              <div class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat nulla quisquam
-                voluptate. Eius repellendus nam nesciunt expedita laudantium voluptatum quam?</div>
+              <div class="content">Done with the trip! See the total expense share and settle the accounts amongst the
+                group members.</div>
             </div>
           </a>
         </div>

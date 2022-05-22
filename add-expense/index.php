@@ -15,6 +15,7 @@ if (!isset($_SESSION['grp_name'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
   <!-- Title tag -->
   <title>Expenzo | Sign Up Page</title>
 
@@ -71,66 +72,63 @@ if (!isset($_SESSION['grp_name'])) {
         //print_r($arr);
         ?>
 
-        <form class="expense-form" method="POST">
-          <br />
-          <label for="description">Description</label>
-          <textarea name="description" id="description" placeholder="description"></textarea>
-          <br />
-          <label for="amount">Amount</label>
-          <input type="text" name="amount" id="amount" placeholder="amount" required />
-          <br />
-          <label for="name">Payement done by</label>
-          <?php
-          echo ("<select name='name' id='name'  required >");
-          echo ("<option value=''>---Choose the member---</option>");
-          for ($i = 0; $i < $num; $i++) {
-            echo ("<option value='" . $arr[$i] . "'>" . $arr[$i] . "</option>");
-          }
-          echo ("</select>");
-          ?>
-          <br />
-
-          <label for="members">Expense Shared By </label>
-          <?php
-          echo ("<br>");
-          for ($i = 0; $i < $num; $i++) {
-            echo ("<input type='checkbox' name=" . $i . ">" . $arr[$i] . "<br>");
-          }
-          ?>
-          <br />
-          <br />
-
-          <button type="submit" name="submit" class="button">Submit</button>
-        </form>
-        <?php
-        if (isset($_POST['submit'])) {
-          $user = $_SESSION['grp_name'];
-          $name = $_POST['name'];
-          $desc = $_POST['description'];
-          $amt = $_POST['amount'];
-          $mem = [];
-          $count = 0;
-          for ($i = 0; $i < $num; $i++) {
-            if (isset($_POST[$i])) {
-              $mem[$count] = $arr[$i];
-              $count++;
+        <div class="form">
+          <form class="expense-form" method="POST">
+            <input type="text" name="description" id="description" placeholder="description" />
+            <input type="text" name="amount" id="amount" placeholder="amount" required />
+            <?php
+            echo ("<select name='name' id='name'  required >");
+            echo ("<option value=''>Expense Done by</option>");
+            for ($i = 0; $i < $num; $i++) {
+              echo ("<option value='" . $arr[$i] . "'>" . $arr[$i] . "</option>");
             }
-          }
-          $samt = $amt / $count;
-          for ($j = 0; $j < $count; $j++) {
-            $query = "INSERT INTO `transaction`(`grp_name`, `name`, `exp_desc`, `amt_share`) VALUES ('$user','$mem[$j]','$desc','$samt');";
+            echo ("</select>");
+            ?>
+            <br />
+            <br />
+            <label for="members">Expense Shared By </label>
+            <?php
+            echo ("<br>");
+            for ($i = 0; $i < $num; $i++) {
+              echo ("<div><input type='checkbox' name=" . $i . "> &nbsp;" . $arr[$i] . "</div>");
+            }
+            ?>
+
+            <br />
+            <br />
+
+            <button type="submit" name="submit" class="button">Submit</button>
+          </form>
+          <?php
+          if (isset($_POST['submit'])) {
+            $user = $_SESSION['grp_name'];
+            $name = $_POST['name'];
+            $desc = $_POST['description'];
+            $amt = $_POST['amount'];
+            $mem = [];
+            $count = 0;
+            for ($i = 0; $i < $num; $i++) {
+              if (isset($_POST[$i])) {
+                $mem[$count] = $arr[$i];
+                $count++;
+              }
+            }
+            $samt = $amt / $count;
+            for ($j = 0; $j < $count; $j++) {
+              $query = "INSERT INTO `transaction`(`grp_name`, `name`, `exp_desc`, `amt_share`) VALUES ('$user','$mem[$j]','$desc','$samt');";
+              mysqli_query($conn, $query);
+            }
+            $str = join(",", $mem);
+            $query = "INSERT INTO `expense`(`grp_name`, `mem_exp_name`, `exp_desc`, `exp_amt`, `exp_split_num`, `mem_name`) VALUES ('$user','$name','$desc','$amt','$count','$str');";
             mysqli_query($conn, $query);
-          }
-          $str = join(",", $mem);
-          $query = "INSERT INTO `expense`(`grp_name`, `mem_exp_name`, `exp_desc`, `exp_amt`, `exp_split_num`, `mem_name`) VALUES ('$user','$name','$desc','$amt','$count','$str');";
-          mysqli_query($conn, $query);
-          //$data=mysqli_query($conn,$query);
-          //$total=mysqli_num_rows($data);
-          /*  mysqli_query($conn,$query);
+            //$data=mysqli_query($conn,$query);
+            //$total=mysqli_num_rows($data);
+            /*  mysqli_query($conn,$query);
         echo("<script>alert('Group Registered Successfully');</script>");
         header("location:Login.php");*/
-        }
-        ?>
+          }
+          ?>
+        </div>
       </section>
     </div>
   </header>
