@@ -46,6 +46,7 @@ if (!isset($_SESSION['grp_name'])) {
       </div>
       <ul class="nav-links">
         <li><a>Group Name: <?php echo ($_SESSION['grp_name']) ?></a></li>
+        <li><a href="../welcome/">Home</a></li>
         <li><a href="../logout/">Logout</a></li>
       </ul>
     </div>
