@@ -1,49 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Expenzo | Welcome to the most customizable Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../static/css/styles.css" />
+    <!-- Title tag -->
+    <title>Expenzo</title>
+
+    <!-- Font awesome -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css"
+    />
+
+    <!-- Custom CSS -->
+    <link href="../assets/css/custom-bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="hero-image"></div>
-    <section class="hero">
-      <header id="header">
-        <a id="logo" href="/home/">Exprezo</a>
-        <nav>
-          <a class="button" href="/signin/">Sign In</a>
-          <a class="button" href="/signup/">Sign Out</a>
-        </nav>
-      </header>
-      <header class="hero-header">
-        <h1 class="hero-title">Do you go for a long trip with friends?</h1>
-        <h1 class="hero-subtitle">
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="main-nav">
+      <div class="content-wrapper-sm">
+        <a href="../home" class="navbar-brand">Expenzo</a>
+        <div id="menu-button">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../sign-up/">Sign Up</a></li>
+          <li><a href="../login">Log In</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main header -->
+    <header>
+      <!-- First replaceble image -->
+      <img
+        class="img-absolute"
+        src="https://raw.githubusercontent.com/Jesus-E-Rodriguez/cityscapes-landing-page/master/img/city.png"
+        alt="City 1"
+      />
+      <div class="wrapper astonish animated fadeInDown">
+        <h1><strong>Expe</strong>nzo</h1>
+        <h2 class="header__title">Do you go for a long trip with friends & family?</h2>
+        <h2 class="header__subtitle">
           And do you end up manually calculating all the expense. If the answer is YES!!! Don't
           worry we got your back. We are here to help you.
-        </h1>
-      </header>
-    </section>
-    <article class="info">
-      <h2 class="info-header">Some additional content</h2>
-      <p class="info-content">
-        The rest of the page content continues below the hero. You can use the hero at the top of
-        your page, e.g. the home page. A hero is great to display a high quality picture together
-        with tasty title.
-      </p>
-      <p>
-        Ad donec tincidunt torquent ultricies convallis sodales faucibus magna, fringilla lorem
-        blandit sollicitudin donec faucibus curae orci molestie, et proin curae aliquet venenatis
-        ligula amet vivamus orci varius arcu.
-      </p>
-      <p>
-        Laoreet fusce condimentum venenatis quisque imperdiet ornare cras faucibus convallis,
-        pharetra habitasse elementum ut bibendum per sociosqu phasellus etiam, velit faucibus
-        integer torquent leo elementum maecenas netus.
-      </p>
-    </article>
+        </h2>
+      </div>
+    </header>
+
+    <!-- Scripts placed at the bottom for faster loading -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/menu.js" charset="utf-8"></script>
   </body>
 </html>
