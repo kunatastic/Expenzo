@@ -20,7 +20,7 @@ Expenzo is a one stop solution to split all your bills and share expenses among 
 
 2. CSS3
 
-3. JavaScript
+3. Vanilla JavaScript
 
 4. PHP
 
