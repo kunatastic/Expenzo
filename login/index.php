@@ -73,8 +73,9 @@ include("../connection.php");
     $pwd = $_POST['password'];
     $query = "SELECT * FROM group_details WHERE grp_name='$user' && password='$pwd'";
     $data = mysqli_query($conn, $query);
-    $total = mysqli_num_rows($data);
-    if ($total == 1) {
+    $tot = mysqli_num_rows($data);
+    if ($tot == 1) 
+    {
       session_start();
       $_SESSION['grp_name'] = $user;
       header('location:../welcome');
